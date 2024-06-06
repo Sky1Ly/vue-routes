@@ -33,16 +33,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      productos: ['Bebidas', 'Colaciones', 'Desayunos', 'Dulces', 'Empanadas', 'Verduras'],
-      imgProd: ['bebidas.jpg', 'colaciones.jpg', 'desayunos.jpg', 'dulces.jpg', 'empanadas.jpg', 'verduras.jpg']
-    }
-  },
-  methods: {
-    getImgProd(imgagen){
-      return require(`../assets/img/${imgagen}`)
-    }
-  },
+  props: ['producto', 'imagen', 'descripcion', 'precio', 'cantidad']
 }
 </script>

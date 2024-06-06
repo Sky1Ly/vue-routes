@@ -29,17 +29,14 @@
       <div class="col-sm-4 col-12 px-5 mb-4" v-for="(producto, i) in productos" :key="i">
         <!-- primera -->
         <div class="card">
-          <img :src="getImgProd(imgProd[i])" class="card-img-top" alt="colaciones" />
+          <img :src="producto.imagen" class="card-img-top" alt="colaciones" />
           <div class="card-body">
-            <h5 class="card-title fw-bold">{{ producto }}</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <h5 class="card-title fw-bold">{{ producto.nombre }}</h5>
+            <p class="card-text">{{ producto.descripcion }}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Precio: {{producto.precio}}</li>
+            <li class="list-group-item">Cantidad: {{producto.cantidad}}</li>
           </ul>
           <div class="card-body">
             <a href="#" class="card-link">Ver más</a>
@@ -55,14 +52,51 @@
 export default {
   data() {
     return {
-      productos: ['Bebidas', 'Colaciones', 'Desayunos', 'Dulces', 'Empanadas', 'Verduras'],
-      imgProd: ['bebidas.jpg', 'colaciones.jpg', 'desayunos.jpg', 'dulces.jpg', 'empanadas.jpg', 'verduras.jpg']
+      productos: [
+        {
+          imagen: require('../assets/img/bebidas.jpg'),
+          nombre: 'Bebidas',
+          descripcion: 'Gran variedad de bebidas, desde bebidas personales, hasta bebidas en lata y familiares',
+          precio: 'Desde $400 hasta $3.000',
+          cantidad: 'Personal o Familiar'
+        },
+        {
+          imagen: require('../assets/img/colaciones.jpg'),
+          nombre: 'Colaciones',
+          descripcion: 'Colación con un delicioso platillo de carne, atun, ensalada y postre',
+          precio: 'Desde los $6.000',
+          cantidad: 'Personal'
+        },
+        {
+          imagen: require('../assets/img/desayunos.jpg'),
+          nombre: 'Desayunos',
+          descripcion: 'Delicioso desayuno con huevo y tostada frescos',
+          precio: 'Desde los $3.000',
+          cantidad: 'Personal'
+        },
+        {
+          imagen: require('../assets/img/dulces.jpg'),
+          nombre: 'Dulces',
+          descripcion: 'Gran variedad de dulces, todos de 100 unidades',
+          precio: 'Desde los $4.000',
+          cantidad: '100 unidades'
+        },
+        {
+          imagen: require('../assets/img/empanadas.jpg'),
+          nombre: 'Empanadas',
+          descripcion: 'Deliciosas empanadas de carne, pollo, perro y gato',
+          precio: 'Desde los $5.000',
+          cantidad: '1 docena'
+        },
+        {
+          imagen: require('../assets/img/verduras.jpg'),
+          nombre: 'Verduras',
+          descripcion: 'Verduras frescas a tan solo un clic de distancia',
+          precio: 'Desde los $1.000',
+          cantidad: 'Por Kg'
+        }
+      ]
     }
-  },
-  methods: {
-    getImgProd(imgagen) {
-      return require(`../assets/img/${imgagen}`)
-    }
-  },
+  }
 }
 </script>
