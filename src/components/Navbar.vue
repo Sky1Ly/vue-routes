@@ -14,7 +14,7 @@
             <router-link to="/" class="nav-link text-light">Inicio</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/products" class="nav-link text-light">Productos</router-link>
+            <router-link to="/products/desayunos" class="nav-link text-light">Productos</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/contact" class="nav-link text-light">Contacto</router-link>

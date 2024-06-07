@@ -7,11 +7,11 @@ const routes = [
     component: () => import('../views/HomeView.vue')
   },
   {
-    path: '/products',
-    name: 'product',
+    path: '/products/:entrada',
+    name: 'productEntry',
+    props: true,
     component: () => import('../components/Card.vue')
-  }
-  ,
+  },
   {
     path: '/contact',
     name: 'contact',

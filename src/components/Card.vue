@@ -1,27 +1,23 @@
 <template>
   <!-- cartas -->
   <section class="container" id="productos">
-    <h1 class=" text-center">Nuestros Productos</h1>
+    <h1 class=" text-center">{{nomProducto}}</h1>
 
     <div class="row">
-      <div class="col-sm-4 col-12 px-5 mb-4" v-for="(producto, i) in productos" :key="i">
+      <div class="col-sm-4 col-12 px-5 mb-4">
         <!-- primera -->
         <div class="card">
-          <img :src="getImgProd(imgProd[i])" class="card-img-top" alt="colaciones" />
+          <img src="" class="card-img-top" />
           <div class="card-body">
-            <h5 class="card-title fw-bold">{{ producto }}</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <h5 class="card-title fw-bold">{{  }}</h5>
+            <p class="card-text">{{  }}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">{{  }}</li>
+            <li class="list-group-item">{{  }}</li>
           </ul>
           <div class="card-body">
-            <a href="#" class="card-link">Ver más</a>
-            <a href="#" class="card-link">Comprar</a>
+            <router-link to="/">Comprar</router-link>
           </div>
         </div>
       </div>
@@ -33,6 +29,16 @@
 
 <script>
 export default {
-  props: ['producto', 'imagen', 'descripcion', 'precio', 'cantidad']
+  props: {
+    producto: {
+      type: Object
+    }
+  },
+
+  computed: {
+    nomProducto() {
+      return `Conozca nuestro producto: ${this.$route.params.entrada}`
+    }
+  }  
 }
 </script>

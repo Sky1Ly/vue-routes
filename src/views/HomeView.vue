@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <h1 class="text-center">Nuestros Productos</h1>
+    <h1 class="text-center" id="productos">Nuestros Productos</h1>
 
     <div class="row">
       <div class="col-sm-4 col-12 px-5 mb-4" v-for="(producto, i) in productos" :key="i">
@@ -39,7 +39,7 @@
             <li class="list-group-item">Cantidad: {{producto.cantidad}}</li>
           </ul>
           <div class="card-body">
-            <a href="#" class="card-link">Ver más</a>
+            <router-link :to="{path: enrutarProducto(producto.nombre), props: {producto}}" class="card-link">Ver Producto</router-link>
             <a href="#" class="card-link">Comprar</a>
           </div>
         </div>
@@ -50,6 +50,7 @@
 
 <script>
 export default {
+  //enrutarProducto(producto.nombre)
   data() {
     return {
       productos: [
@@ -96,6 +97,11 @@ export default {
           cantidad: 'Por Kg'
         }
       ]
+    }
+  },
+  methods: {
+    enrutarProducto(entrada){
+      return `/products/${entrada}`
     }
   }
 }
